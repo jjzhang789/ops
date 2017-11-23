@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OpsPay-自动化运维系统</title>
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    {% block head %}{% endblock %}
+
+</head>
+<body>
+
+<nav class="navbar navbar-default base-style" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" id="font-style">OpsPay</a>
+    </div>
+    <ul class="nav navbar-nav navbar-left" >
+      <li><a href="#" id="font-style">LINUX</a></li>
+      <li><a href="#" id="font-style">PYTHON</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="font-style">
+                    <span class="glyphicon glyphicon-user"></span>
+                    {{ username }}
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">用户信息</a></li>
+                    <li><a href="#">密码修改</a></li>
+                    <li><a href="#">添加用户</a></li>
+                </ul>
+         </li>
+
+      <li><a href="{{ url_for('AUTH.logout') }}" id="font-style"><span class="glyphicon glyphicon-log-out font-style"></span> 注销</a></li>
+    </ul>
+  </div>
+</nav>
+{% block body %}{% endblock %}
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

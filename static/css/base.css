@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #f3f3f3;
+}
+.base-style{
+    background: rgba(0,0,0,0.8);
+}
+#font-style{
+    color: #fff;
+}

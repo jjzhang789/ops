@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <style type="text/css">
+        body{
+            background: #f1f1f1;
+        }
+    .login{
+        width: 400px;
+        height: 300px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border: 1px solid #d8dee2;
+        margin-left: -200px;
+        margin-top: -150px;
+        background: #fff;
+        box-shadow: 0 0 8px rgba(0,0,0,.1);
+        border-radius: 5px;
+    }
+        li{
+            list-style: none;
+        }
+        .input-type{
+            width: 200px;
+            height: 20px;
+            border-radius: 2px;
+
+        }
+        form{
+            margin: 90px 0 0 60px;
+
+        }
+        .input-sub{
+            width: 80px;
+            height: 30px;
+            margin-right: 45px;
+            /*border-radius: 2px;*/
+            /*background: #3194d0;*/
+
+        }
+    </style>
+</head>
+<body>
+<div class="login">
+    <form action="{{ url_for('AUTH.login') }}" method="post">
+        <ul>
+            <li><input class="input-type" type="text" name="telephone" placeholder="请输入手机号"></li>
+        </ul>
+        <ul>
+            <li><input class="input-type" type="password" name="password" placeholder="请输入密码"></li>
+        </ul>
+        <ul>
+            <li><input class="input-sub" type="submit" value="登录"><input class="input-sub" type="reset" value="重置"></li>
+        </ul>
+        {% if errors %}
+            <font color="red">{{ errors }}</font>
+        {% endif %}
+    </form>
+
+</div>
+
+</body>
+</html>
