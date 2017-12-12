@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="../static/css/base.css">
     {% block head %}{% endblock %}
 
-</head>
-<body>
+
 
 <nav class="navbar navbar-default base-style" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#" id="font-style">OpsPay</a>
+      <a class="navbar-brand" href="/" id="font-style">OpsPay</a>
     </div>
     <ul class="nav navbar-nav navbar-left" >
       <li><a href="#" id="font-style">LINUX</a></li>
@@ -26,9 +25,11 @@
                     {{ username }}
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">用户信息</a></li>
+{#                    <li><a href="{{ url_for('AUTH.userinfo') }}">用户信息</a></li>#}
                     <li><a href="#">密码修改</a></li>
-                    <li><a href="#">添加用户</a></li>
+                    {% if username == 'admin' %}
+                    <li><a href="{{ url_for('AUTH.adduser') }}">添加用户</a></li>
+                    {% endif %}
                 </ul>
          </li>
 
@@ -36,6 +37,8 @@
     </ul>
   </div>
 </nav>
+</head>
+<body>
 {% block body %}{% endblock %}
 <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
